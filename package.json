@@ -38,6 +38,7 @@
     "prettier": "prettier . -l",
     "prettier:fix": "prettier --write .",
     "prettier:check": "prettier . -l",
+    "test": "node --test test/polyfill.test.cjs",
     "version": "prettier --write CHANGELOG.md README.md && git add CHANGELOG.md README.md"
   },
   "author": "Jeffrey Chupp",
