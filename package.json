@@ -1,7 +1,7 @@
 {
   "packageManager": "yarn@4.11.0",
   "name": "@quonfig/react-native",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Native bindings for Quonfig — a thin polyfill wrapper around @quonfig/react",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",

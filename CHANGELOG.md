@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.3 - 2026-05-14
+
+- CI / tooling only — no functional or public API changes. Made the release workflow's test gate
+  real by adding a polyfill smoke test (`test/polyfill.test.cjs`) and switching the `test` script to
+  an explicit file path for Node 20 compatibility. Bumped GitHub Actions dependencies:
+  `actions/checkout` 3.6.0 → 6.0.2, `actions/cache` 4.3.0 → 5.0.5, `actions/setup-node` 4.4.0 →
+  6.4.0.
+
 ## 0.0.2 - 2026-05-13
 
 - First version published to npm. No functional changes from `0.0.1`. Version bumped solely to
