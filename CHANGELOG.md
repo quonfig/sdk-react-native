@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.4 - 2026-05-21
+
+- Reworked the `@quonfig/react` `devDependency` from `portal:../sdk-react` to a published npm range
+  so Dependabot's isolated, single-repo npm updater can resolve the dependency tree (qfg-zu8o,
+  option A). Removed the now-obsolete "Replace local file/portal dep with npm version for CI" step
+  from `test.yml` and `release.yaml`, added a `CONTRIBUTING.md` documenting `yarn link` as the
+  local-dev path for testing against an unpublished `../sdk-react`.
+- Bumped the `@quonfig/react` `peerDependency` floor `>=0.0.13` → `>=0.0.14` and set the
+  `devDependency` to the same `>=0.0.14` range so dev and peer stay consistent.
+
 ## 0.0.3 - 2026-05-14
 
 - CI / tooling only — no functional or public API changes. Made the release workflow's test gate
