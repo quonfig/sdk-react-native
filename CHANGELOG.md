@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0 - 2026-06-06
+
+- **Stable 1.0.0 release.** The Quonfig React Native SDK is now declared stable and tracks
+  `@quonfig/react` >= 1.0.0. No API or behavior changes from 0.0.4 — this is a coordinated 1.0.0
+  version stamp across the entire Quonfig SDK family.
+
 ## 0.0.4 - 2026-05-21
 
 - Reworked the `@quonfig/react` `devDependency` from `portal:../sdk-react` to a published npm range
