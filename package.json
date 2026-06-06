@@ -50,7 +50,7 @@
   ],
   "dependencies": {
     "base-64": "^1.0.0",
-    "react-native-get-random-values": "^1.11.0"
+    "react-native-get-random-values": "^2.0.0"
   },
   "peerDependencies": {
     "@quonfig/react": ">=1.0.0",
