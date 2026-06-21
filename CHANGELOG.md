@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0 - 2026-06-21
+
+- **Inherits secondary-delivery failover from `@quonfig/react` 1.1.0 / `@quonfig/javascript` 1.1.0**
+  — the reject-older install guard (§5f), parallel hedged loader (§5e), and last-known-good
+  localStorage cache (§5h). This package is `export * from "@quonfig/react"` plus the base-64 /
+  crypto polyfills, so the failover behavior is inherited with no code change. No API changes.
+- The `@quonfig/react` peer-dependency range is deliberately kept at `>=1.0.0` (already admits
+  1.1.0; tightening the floor before `@quonfig/react` 1.1.0 is published would break installs during
+  the publish window). Consumers pick up 1.1.0 once published.
+
 ## 1.0.0 - 2026-06-06
 
 - **Stable 1.0.0 release.** The Quonfig React Native SDK is now declared stable and tracks
