@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased
+
+- **Caveat / correction to the 1.1.0 note:** the last-known-good cache (§5h) inherited from
+  `@quonfig/javascript` is **inert under React Native**. It is backed by `localStorage`, which
+  Hermes does not provide, so `@quonfig/javascript` silently no-ops the cache (every access is
+  guarded) and it never persists or serves on RN. A returning app launch during a simultaneous
+  primary+secondary outage falls back to defaults, not the last-known-good config. The other two
+  failover pieces — the reject-older install guard (§5f) and the parallel hedged loader (§5e) — are
+  pure JS and DO work on RN. Documented in the README's new "Failover behavior on React Native"
+  section. An `AsyncStorage`-backed adapter is deferred (non-trivial: the cache read path is
+  synchronous while `AsyncStorage` is async) — design captured in qfg-41nh.28.
+- **`hedgeDelay` provider prop is available on RN** (inherited from `@quonfig/react`, no code change
+  here since this package is `export * from "@quonfig/react"`). See the `@quonfig/react` prop
+  reference.
+
 ## 1.1.0 - 2026-06-21
 
 - **Inherits secondary-delivery failover from `@quonfig/react` 1.1.0 / `@quonfig/javascript` 1.1.0**

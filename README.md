@@ -69,6 +69,23 @@ export * from "@quonfig/react";
   available whenever `typeof window !== "undefined"`, which is true under React Native — but RN's JS
   runtime does not ship `btoa` natively.
 
+## Failover behavior on React Native
+
+`@quonfig/react-native` inherits the secondary-delivery failover from `@quonfig/react` /
+`@quonfig/javascript`, but one piece does not carry over to React Native:
+
+- **Works on RN:** the reject-older install guard (spec §5f), the parallel hedged loader (spec §5e,
+  tunable via the `hedgeDelay` provider prop), and automatic primary → secondary failover. These are
+  pure JS with no browser-storage dependency.
+- **Inert on RN — the last-known-good (LKG) cache (spec §5h).** The LKG cache the browser SDK uses
+  to survive a total outage across page loads is backed by `localStorage`, which React Native's
+  Hermes engine does not provide. `@quonfig/javascript` guards every access and silently no-ops when
+  `localStorage` is absent, so nothing breaks — but on RN the cache never persists and never serves.
+  A returning app launch during a simultaneous primary+secondary outage falls back to defaults
+  rather than the last-known-good config. (An `AsyncStorage`-backed adapter is a possible future
+  enhancement; it is non-trivial because the cache read path is synchronous while `AsyncStorage` is
+  async — tracked in qfg-41nh.28.)
+
 ## License
 
 ISC
