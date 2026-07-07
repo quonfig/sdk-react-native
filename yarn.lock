@@ -250,12 +250,12 @@ __metadata:
   linkType: soft
 
 "@quonfig/react@npm:>=1.0.0":
-  version: 1.0.0
-  resolution: "@quonfig/react@npm:1.0.0"
+  version: 1.1.0
+  resolution: "@quonfig/react@npm:1.1.0"
   peerDependencies:
     "@quonfig/javascript": ">=1.0.0"
     react: ^18 || ^19
-  checksum: 10c0/5ba0c45b3e275b5983fdbeac10621fc55712817288187a7ac0a0737bebed13afc7074c7ba5ef80c1d4eeb1744dc19ec90002a42487cbbb06e731157b73be04d8
+  checksum: 10c0/ec05c4df0139c1076f2d65085ea356ac68c9631ad271547f630c7cff803a26b85cda8192467ee34e75e94bc6348e6d6a838712a0c47422cf28c6a0421630ac66
   languageName: node
   linkType: hard
 
