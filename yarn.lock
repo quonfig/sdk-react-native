@@ -234,7 +234,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@quonfig/react-native@workspace:."
   dependencies:
-    "@quonfig/react": "npm:>=1.0.0"
+    "@quonfig/react": "npm:^1.2.0"
     "@types/base-64": "npm:^1.0.2"
     "@types/node": "npm:^18.6.5"
     base-64: "npm:^1.0.0"
@@ -243,19 +243,19 @@ __metadata:
     tsup: "npm:^8.4.0"
     typescript: "npm:^5.4.0"
   peerDependencies:
-    "@quonfig/react": ">=1.0.0"
+    "@quonfig/react": ^1.2.0
     react: ^18 || ^19
     react-native: ">=0.70"
   languageName: unknown
   linkType: soft
 
-"@quonfig/react@npm:>=1.0.0":
-  version: 1.0.0
-  resolution: "@quonfig/react@npm:1.0.0"
+"@quonfig/react@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@quonfig/react@npm:1.2.0"
   peerDependencies:
-    "@quonfig/javascript": ">=1.0.0"
+    "@quonfig/javascript": ^1.2.0
     react: ^18 || ^19
-  checksum: 10c0/5ba0c45b3e275b5983fdbeac10621fc55712817288187a7ac0a0737bebed13afc7074c7ba5ef80c1d4eeb1744dc19ec90002a42487cbbb06e731157b73be04d8
+  checksum: 10c0/6c04d587c9ff3dfa9221363d96f3ff619da9dbd1a4e2801340f98909213da56dd3ce662653143370be35da10d41df7a7ffa43601d904f819900b6be1e1881a5d
   languageName: node
   linkType: hard
 

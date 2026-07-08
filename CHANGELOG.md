@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.2.0 - 2026-07-08
 
 - **Caveat / correction to the 1.1.0 note:** the last-known-good cache (§5h) inherited from
   `@quonfig/javascript` is **inert under React Native**. It is backed by `localStorage`, which
@@ -14,6 +14,10 @@
 - **`hedgeDelay` provider prop is available on RN** (inherited from `@quonfig/react`, no code change
   here since this package is `export * from "@quonfig/react"`). See the `@quonfig/react` prop
   reference.
+- Bumped the `@quonfig/react` peer + dev dependency to `^1.2.0` (from the `>=1.0.0` range shipped in
+  1.1.0). `@quonfig/react` 1.2.0 / `@quonfig/javascript` 1.2.0 are now published; the old loose
+  floor could resolve to an incompatible 1.0.x, so this release pins to the current 1.2.0 as part of
+  the coordinated frontend release train. Mirrors the `@quonfig/react` 1.2.0 peer bump.
 
 ## 1.1.0 - 2026-06-21
 
