@@ -36,7 +36,7 @@ jobs:
             ${{ runner.os }}-node${{ matrix.node-version }}-yarn-
 
       - name: Install modules
-        run: yarn install --no-immutable
+        run: yarn install --immutable
 
       - name: Run formatter
         run: yarn prettier:check

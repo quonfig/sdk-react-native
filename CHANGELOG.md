@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Docs only; no code change, no release required (semver: none).
+Docs and CI only; no code change, no release required (semver: none).
 
 - README: new "Import order" section. Import `@quonfig/react-native` once at the app entry
   (`index.js`) before anything else, and import hooks from `@quonfig/react-native`, never from
@@ -13,6 +13,9 @@ Docs only; no code change, no release required (semver: none).
 - README: points to the `pollInterval` provider prop; without it, flags are fetched only on mount
   and context change.
 - Added `test/readme.test.cjs` to keep that guidance in the README.
+- CI: `test.yml` and `release.yaml` now run `yarn install --immutable` (was `--no-immutable`), so a
+  stale `yarn.lock` fails CI instead of being silently rewritten (qfg-goi1.2.19). CI-only; no
+  release required (semver: none).
 
 ## 1.2.0 - 2026-07-08
 
