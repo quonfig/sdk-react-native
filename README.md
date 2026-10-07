@@ -11,12 +11,35 @@ that the React SDK does not yet expose to React Native, open an issue.
 ## Install
 
 ```bash
-npm install @quonfig/react-native @quonfig/react base-64 react-native-get-random-values
+npm install @quonfig/react-native @quonfig/react @quonfig/javascript base-64 react-native-get-random-values
 # or
-yarn add @quonfig/react-native @quonfig/react base-64 react-native-get-random-values
+yarn add @quonfig/react-native @quonfig/react @quonfig/javascript base-64 react-native-get-random-values
 ```
 
-TypeScript types are included.
+`@quonfig/react` and `@quonfig/javascript` are peer dependencies. npm 7+ installs peers for you, but
+Yarn does not, so list them explicitly. TypeScript types are included.
+
+## Import order
+
+The polyfills only help if they are installed before `@quonfig/javascript` loads, because that
+package creates its client (and calls `crypto.getRandomValues()`) as soon as it is imported. So:
+
+1. Import `@quonfig/react-native` once at your app entry (`index.js`), before anything else:
+
+   ```js
+   // index.js
+   import "@quonfig/react-native";
+   import { AppRegistry } from "react-native";
+   import App from "./App";
+
+   AppRegistry.registerComponent("MyApp", () => App);
+   ```
+
+2. Import hooks and components from `@quonfig/react-native`, never from `@quonfig/react`. This
+   applies to the `@quonfig/react` examples linked below too.
+
+If `@quonfig/react` or `@quonfig/javascript` is evaluated first, the app can crash at startup with
+`crypto.getRandomValues() not supported`.
 
 ## Usage
 
@@ -44,6 +67,11 @@ const Logo = () => {
 
 See the [`@quonfig/react` README](https://github.com/quonfig/sdk-react#readme) for the full API
 (`useQuonfig`, `useFlag`, `QuonfigTestProvider`, etc.) and provider prop reference.
+
+Without polling, flags are fetched only when the provider mounts or its `contextAttributes` change.
+To pick up flag changes while the app stays open, pass a `pollInterval` (in milliseconds) to
+`QuonfigProvider`; see
+[Initialize the Client](https://docs.quonfig.com/docs/sdks/react-native#initialize-the-client).
 
 ## How the polyfills work
 

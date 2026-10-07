@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased
+
+Docs only; no code change, no release required (semver: none).
+
+- README: new "Import order" section. Import `@quonfig/react-native` once at the app entry
+  (`index.js`) before anything else, and import hooks from `@quonfig/react-native`, never from
+  `@quonfig/react`. Otherwise `@quonfig/javascript` can load before the `crypto.getRandomValues`
+  polyfill and crash at startup.
+- README: the install lines now include the `@quonfig/javascript` peer, which Yarn does not
+  auto-install.
+- README: points to the `pollInterval` provider prop; without it, flags are fetched only on mount
+  and context change.
+- Added `test/readme.test.cjs` to keep that guidance in the README.
+
 ## 1.2.0 - 2026-07-08
 
 - **Caveat / correction to the 1.1.0 note:** the last-known-good cache (§5h) inherited from
