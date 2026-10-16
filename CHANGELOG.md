@@ -1,9 +1,10 @@
 # Changelog
 
-## Unreleased
+## 1.2.1 - 2026-10-16
 
-Docs and CI only; no code change, no release required (semver: none).
-
+- Requires `@quonfig/react` `^1.5.1` (peer + dev floor moves from `^1.2.0`), which requires
+  `@quonfig/javascript` `^1.5.1`: eval-summary telemetry no longer serializes the selected value on
+  every read (qfg-23uf), a 1.5.0 regression of about 1500x per read on a 60KB JSON config.
 - README: new "Import order" section. Import `@quonfig/react-native` once at the app entry
   (`index.js`) before anything else, and import hooks from `@quonfig/react-native`, never from
   `@quonfig/react`. Otherwise `@quonfig/javascript` can load before the `crypto.getRandomValues`
