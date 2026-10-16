@@ -250,12 +250,12 @@ __metadata:
   linkType: soft
 
 "@quonfig/react@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "@quonfig/react@npm:1.2.0"
+  version: 1.4.0
+  resolution: "@quonfig/react@npm:1.4.0"
   peerDependencies:
-    "@quonfig/javascript": ^1.2.0
+    "@quonfig/javascript": ^1.4.0
     react: ^18 || ^19
-  checksum: 10c0/6c04d587c9ff3dfa9221363d96f3ff619da9dbd1a4e2801340f98909213da56dd3ce662653143370be35da10d41df7a7ffa43601d904f819900b6be1e1881a5d
+  checksum: 10c0/5e6f9e79043bd6d8de047a9391b5b27d89fa1535465b1adb14400137b38b230f673cd03bbc987d5bd73e03d3ca7b084e6d734709961db46d43129a37845126a0
   languageName: node
   linkType: hard
 
@@ -904,11 +904,11 @@ __metadata:
   linkType: hard
 
 "prettier@npm:^3.0.0":
-  version: 3.8.3
-  resolution: "prettier@npm:3.8.3"
+  version: 3.9.10
+  resolution: "prettier@npm:3.9.10"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10c0/754816fd7593eb80f6376d7476d463e832c38a12f32775a82683adb6e35b772b1f484d65f19401507b983a8c8a7cd5a4a9f12006bd56491e8f35503473f77473
+  checksum: 10c0/0b3531593aa6fb36ac6baf629cb058bda472c59a6938774f931fe55283a07c62e6f56e621b043a82d8a3e21fc284c08c34f9e539fc70072635f79b7bae1a1067
   languageName: node
   linkType: hard
 
