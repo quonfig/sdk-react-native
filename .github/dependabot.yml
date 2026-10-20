@@ -35,3 +35,15 @@ updates:
       # release, so hold this dependency on 1.x until we decide to (qfg-obhe).
       - dependency-name: react-native-get-random-values
         update-types: ["version-update:semver-major"]
+      # Runtime and peer dependencies of the published package. The range we
+      # declare is the floor customers must install, so a major bump here
+      # forces every customer onto that major. Raise these floors
+      # deliberately in a release, not via Dependabot.
+      - dependency-name: "base-64"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@quonfig/react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-native"
+        update-types: ["version-update:semver-major"]
