@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.2.2 - 2026-10-20
+
+- Fix: `react-native-get-random-values` is pinned back to `^1.11.0` (was `^2.0.0`). 1.2.1
+  accidentally shipped a Dependabot bump to the 2.x native module, which requires React Native
+  `>=0.81` and the New Architecture. On React Native 0.70-0.80, npm warned `ERESOLVE` on install
+  (`--strict-peer-deps` failed outright), and on the Old Architecture `crypto.getRandomValues` threw
+  at runtime, breaking the app's own `uuid` / `nanoid` calls. 1.2.2 restores the declared
+  `react-native >=0.70` contract (qfg-obhe). If you added `react-native-get-random-values@2` to your
+  app for 1.2.1, you can keep it on React Native 0.81+; otherwise install `^1.11.0`.
+- README: the install lines now pin `react-native-get-random-values@^1.11.0`.
+- Dependabot no longer proposes major bumps of `react-native-get-random-values`; moving to 2.x means
+  raising the React Native floor, which is a major release.
+
 ## 1.2.1 - 2026-10-16
 
 - Requires `@quonfig/react` `^1.5.1` (peer + dev floor moves from `^1.2.0`), which requires

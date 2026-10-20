@@ -11,9 +11,9 @@ that the React SDK does not yet expose to React Native, open an issue.
 ## Install
 
 ```bash
-npm install @quonfig/react-native @quonfig/react @quonfig/javascript base-64 react-native-get-random-values
+npm install @quonfig/react-native @quonfig/react @quonfig/javascript base-64 react-native-get-random-values@^1.11.0
 # or
-yarn add @quonfig/react-native @quonfig/react @quonfig/javascript base-64 react-native-get-random-values
+yarn add @quonfig/react-native @quonfig/react @quonfig/javascript base-64 react-native-get-random-values@^1.11.0
 ```
 
 `@quonfig/react` and `@quonfig/javascript` are peer dependencies. npm 7+ installs peers for you, but
