@@ -29,3 +29,9 @@ updates:
     groups:
       npm-minor-patch:
         update-types: ["minor", "patch"]
+    ignore:
+      # 2.x requires react-native >=0.81 and the New Architecture, but this
+      # package declares react-native >=0.70. Raising that floor is a major
+      # release, so hold this dependency on 1.x until we decide to (qfg-obhe).
+      - dependency-name: react-native-get-random-values
+        update-types: ["version-update:semver-major"]
