@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.3.0 - 2026-10-21
+
+- Requires `@quonfig/react` `^1.6.0` (peer + dev floor moves from `^1.5.1`), which requires
+  `@quonfig/javascript` `^1.6.0`. React Native apps now get the startup-failure surface: the
+  `onInitFailure` (`fail` | `wait` | `continue`) and `initTimeout` provider props, `isReady` /
+  `error` / `source` from `useQuonfig`, and polling that keeps running after a failed init so the
+  app heals when delivery comes back (qfg-9p4i). Startup fails by default when no config (fresh or
+  cached) loads within `initTimeout`; set `onInitFailure="continue"` to start on code defaults.
+
 ## 1.2.2 - 2026-10-20
 
 - Fix: `react-native-get-random-values` is pinned back to `^1.11.0` (was `^2.0.0`). 1.2.1
