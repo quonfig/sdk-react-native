@@ -47,5 +47,8 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Check dependency peer ranges
+        run: yarn check:peers
+
       - name: Test
         run: yarn test

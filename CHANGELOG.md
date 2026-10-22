@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Tests: real-stack provider tests over the actual `@quonfig/react` + `@quonfig/javascript` in an
+  RN-shaped runtime (failed boot then recovery, context switch, telemetry flush, ESM build polyfill
+  order), and a CI peer-range check that fails when a dependency's `react` / `react-native` peer
+  range does not cover ours (qfg-6vno.18). No runtime change.
+
 ## 1.3.0 - 2026-10-21
 
 - Requires `@quonfig/react` `^1.6.0` (peer + dev floor moves from `^1.5.1`), which requires
