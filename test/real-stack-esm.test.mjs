@@ -8,32 +8,15 @@
 
 import { test, after } from "node:test";
 import assert from "node:assert/strict";
-import { createRequire, register } from "node:module";
+import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
 const env = require("./support/rn-env.cjs");
 
 // `base-64` is a UMD/CJS file whose named exports Node's CJS lexer cannot
-// see, so Node's own ESM loader rejects `import { encode, decode } from
-// "base-64"` (Metro and other bundlers do the interop). Serve the real
-// `base-64` through a tiny ESM facade so the ESM build can load under Node.
-const base64Path = require.resolve("base-64");
-const facade =
-  "data:text/javascript," +
-  encodeURIComponent(
-    `import { createRequire } from "node:module";` +
-      `const b = createRequire(${JSON.stringify(base64Path)})(${JSON.stringify(base64Path)});` +
-      `export const encode = b.encode; export const decode = b.decode; export default b;`
-  );
-register(
-  "data:text/javascript," +
-    encodeURIComponent(
-      `export async function resolve(specifier, context, next) {` +
-        `if (specifier === "base-64") return { url: ${JSON.stringify(facade)}, shortCircuit: true };` +
-        `return next(specifier, context);` +
-        `}`
-    )
-);
+// see, so the ESM build must default-import it (qfg-zz1c). Load the built
+// file under Node's own ESM loader with no resolve hooks or facades, so a
+// regression to `import { encode, decode } from "base-64"` fails here.
 
 env.installRnGlobals();
 
