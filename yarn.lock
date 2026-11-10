@@ -263,12 +263,12 @@ __metadata:
   linkType: soft
 
 "@quonfig/react@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "@quonfig/react@npm:1.6.0"
+  version: 1.7.0
+  resolution: "@quonfig/react@npm:1.7.0"
   peerDependencies:
-    "@quonfig/javascript": ^1.6.0
+    "@quonfig/javascript": ^1.8.0
     react: ^18 || ^19
-  checksum: 10c0/c14002eee3ec8ca8a8a0144b5195399bd2ee6e1275f0e2bc698de19e5b140cd16fc4eebacd6cf7ac1202154e60daedb5daa9243c5fbc54489e64fd7ed22d074d
+  checksum: 10c0/ecb800444e9b4ef7f428c7c9d37a8a374e97804a352f69f3c934e4bcec928caf8e1b25be729f3f537c520fe8d16371ba3c547db7e435f9c2db7c2e3f74091f4a
   languageName: node
   linkType: hard
 
@@ -462,11 +462,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:^26.6.5":
-  version: 26.6.5
-  resolution: "@types/node@npm:26.6.5"
+  version: 26.6.6
+  resolution: "@types/node@npm:26.6.6"
   dependencies:
     undici-types: "npm:~8.9.0"
-  checksum: 10c0/4f791f69466ace7842c09e7bef96cb1ddbb65cf3db916ef7e84f0e2b2a17220b6b816dc7539d01520cadfb17ed7169b8214910900493e0a83be8bc7d124ec20a
+  checksum: 10c0/5cb63f644f6e85a257a9cd2403cbcbe196760e2a35fd3ec9fb8b5cff663e14cc832b198cc17b53f870a2e30900ed45a1fb3f53e6589aba26b8e8c484aa672053
   languageName: node
   linkType: hard
 
@@ -1081,11 +1081,11 @@ __metadata:
   linkType: hard
 
 "semver@npm:^7.3.5":
-  version: 7.8.0
-  resolution: "semver@npm:7.8.0"
+  version: 7.8.6
+  resolution: "semver@npm:7.8.6"
   bin:
     semver: bin/semver.js
-  checksum: 10c0/8f096ca9b80ffd47b308d03f9ce8c873e27e2983f36023c559cdc92c51e8433fc23ebbfe57ec9623fc155636a6961ee989501099841ae4bb1babc8d2b3f048cd
+  checksum: 10c0/bf0a4d16eb067e5391323649e46b4a268644d7f8ee88e37c7668d35e861ec145b6e7df576d898007fc0d9a2cedcbc33f71460aa3bbea18eedfa5af58c064d7fe
   languageName: node
   linkType: hard
 
