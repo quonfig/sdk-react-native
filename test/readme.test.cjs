@@ -24,23 +24,27 @@ test("every install line includes the @quonfig/javascript peer", () => {
   }
 });
 
-// The wrapper peers on @quonfig/react ^1.6.0. An unpinned install resolves
-// @quonfig/react 2.x, outside that range, so the README pins both peers to ^1.
-test("install lines pin @quonfig/react and @quonfig/javascript to ^1", () => {
+// The wrapper peers on @quonfig/react ^2 (qfg-kqf8i). The README pins both peers to the
+// matching major so an install never resolves outside the peer range.
+test("install lines pin @quonfig/react and @quonfig/javascript to ^2", () => {
   const installLines = readme
     .split("\n")
     .filter((line) => /^(npm install|yarn add) @quonfig\/react-native\b/.test(line));
   for (const line of installLines) {
-    assert.match(line, /\s@quonfig\/react@\^1(\s|$)/, `@quonfig/react not pinned to ^1: ${line}`);
+    assert.match(line, /\s@quonfig\/react@\^2(\s|$)/, `@quonfig/react not pinned to ^2: ${line}`);
     assert.match(
       line,
-      /\s@quonfig\/javascript@\^1(\s|$)/,
-      `@quonfig/javascript not pinned to ^1: ${line}`
+      /\s@quonfig\/javascript@\^2(\s|$)/,
+      `@quonfig/javascript not pinned to ^2: ${line}`
     );
   }
 });
 
 const has = (needle, what) => assert.ok(readme.includes(needle), `README ${what}: ${needle}`);
+
+test("documents the @quonfig/react-native/testing import", () => {
+  has('from "@quonfig/react-native/testing"', "shows the testing import");
+});
 
 test("documents the import-order rule", () => {
   has("## Import order", "is missing the section");

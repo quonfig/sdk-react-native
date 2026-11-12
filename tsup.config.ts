@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["src/index.ts"],
+  entry: ["src/index.ts", "src/testing.ts"],
   format: ["cjs", "esm"],
   dts: true,
   clean: true,
@@ -17,6 +17,7 @@ export default defineConfig({
     "react-native-get-random-values",
     "base-64",
     "@quonfig/react",
+    "@quonfig/react/testing",
     "@quonfig/javascript",
   ],
   minify: false,

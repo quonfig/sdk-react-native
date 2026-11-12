@@ -230,12 +230,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@quonfig/javascript@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "@quonfig/javascript@npm:1.6.0"
+"@quonfig/javascript@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@quonfig/javascript@npm:2.1.0"
   dependencies:
-    uuid: "npm:^9.0.1"
-  checksum: 10c0/05bcd1bc534f0dc6328a4d62e6fe5117125a9ac73074403b069e8ad6bfd3bffe2e3d30cce1ce6234fefc1033bee90df28ad6661907268488ba58765f1303371f
+    uuid: "npm:^11.1.1"
+  checksum: 10c0/ceec2d88befde5208b2b1866e95bd176fe577a4f263132e6392fed419861575b9a37b36bbef45ca221e020a54f2e7512968b3f9101c1de1126c13a7110aa7e58
   languageName: node
   linkType: hard
 
@@ -243,8 +243,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@quonfig/react-native@workspace:."
   dependencies:
-    "@quonfig/javascript": "npm:^1.6.0"
-    "@quonfig/react": "npm:^1.6.0"
+    "@quonfig/javascript": "npm:^2.1.0"
+    "@quonfig/react": "npm:^2.0.0"
     "@types/base-64": "npm:^1.0.2"
     "@types/node": "npm:^26.6.5"
     base-64: "npm:^1.0.0"
@@ -256,19 +256,19 @@ __metadata:
     tsup: "npm:^8.4.0"
     typescript: "npm:^5.4.0"
   peerDependencies:
-    "@quonfig/react": ^1.6.0
+    "@quonfig/react": ^2.0.0
     react: ^18 || ^19
     react-native: ">=0.70"
   languageName: unknown
   linkType: soft
 
-"@quonfig/react@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "@quonfig/react@npm:1.6.0"
+"@quonfig/react@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@quonfig/react@npm:2.0.0"
   peerDependencies:
-    "@quonfig/javascript": ^1.6.0
+    "@quonfig/javascript": ^2.0.0
     react: ^18 || ^19
-  checksum: 10c0/c14002eee3ec8ca8a8a0144b5195399bd2ee6e1275f0e2bc698de19e5b140cd16fc4eebacd6cf7ac1202154e60daedb5daa9243c5fbc54489e64fd7ed22d074d
+  checksum: 10c0/2c32e07b55c79dcc8de27f2bcedde8c8c3fd213298022fe8d2dbed51375f605386bf71d9b15e8ae55b47065ec711aabb17a5e585e8bd5c73945d0c15c84bf24b
   languageName: node
   linkType: hard
 
