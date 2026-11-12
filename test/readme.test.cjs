@@ -16,7 +16,27 @@ test("every install line includes the @quonfig/javascript peer", () => {
     .filter((line) => /^(npm install|yarn add) @quonfig\/react-native\b/.test(line));
   assert.equal(installLines.length, 2, "expected one npm and one yarn install line");
   for (const line of installLines) {
-    assert.match(line, /\s@quonfig\/javascript(\s|$)/, `missing @quonfig/javascript: ${line}`);
+    assert.match(
+      line,
+      /\s@quonfig\/javascript(@\S+)?(\s|$)/,
+      `missing @quonfig/javascript: ${line}`
+    );
+  }
+});
+
+// The wrapper peers on @quonfig/react ^1.6.0. An unpinned install resolves
+// @quonfig/react 2.x, outside that range, so the README pins both peers to ^1.
+test("install lines pin @quonfig/react and @quonfig/javascript to ^1", () => {
+  const installLines = readme
+    .split("\n")
+    .filter((line) => /^(npm install|yarn add) @quonfig\/react-native\b/.test(line));
+  for (const line of installLines) {
+    assert.match(line, /\s@quonfig\/react@\^1(\s|$)/, `@quonfig/react not pinned to ^1: ${line}`);
+    assert.match(
+      line,
+      /\s@quonfig\/javascript@\^1(\s|$)/,
+      `@quonfig/javascript not pinned to ^1: ${line}`
+    );
   }
 });
 
