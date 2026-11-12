@@ -11,16 +11,16 @@ that the React SDK does not yet expose to React Native, open an issue.
 ## Install
 
 ```bash
-npm install @quonfig/react-native @quonfig/react@^1 @quonfig/javascript@^1 base-64 react-native-get-random-values@^1.11.0
+npm install @quonfig/react-native @quonfig/react@^2 @quonfig/javascript@^2 base-64 react-native-get-random-values@^1.11.0
 # or
-yarn add @quonfig/react-native @quonfig/react@^1 @quonfig/javascript@^1 base-64 react-native-get-random-values@^1.11.0
+yarn add @quonfig/react-native @quonfig/react@^2 @quonfig/javascript@^2 base-64 react-native-get-random-values@^1.11.0
 ```
 
 `@quonfig/react` and `@quonfig/javascript` are peer dependencies. npm 7+ installs peers for you, but
 Yarn does not, so list them explicitly. TypeScript types are included.
 
-Pin both to `^1`. This package peers on `@quonfig/react` `^1.6.0`, so an unpinned install that
-resolves `@quonfig/react` 2.x falls outside the peer range.
+Pin both to `^2`. This package peers on `@quonfig/react` `^2.0.0`, which requires
+`@quonfig/javascript` `^2`. Still on `@quonfig/react` 1.x? Stay on `@quonfig/react-native@^1`.
 
 ## Import order
 
@@ -69,7 +69,20 @@ const Logo = () => {
 ```
 
 See the [`@quonfig/react` README](https://github.com/quonfig/sdk-react#readme) for the full API
-(`useQuonfig`, `useFlag`, `QuonfigTestProvider`, etc.) and provider prop reference.
+(`useQuonfig`, `useFlag`, etc.) and provider prop reference.
+
+## Testing
+
+`QuonfigTestProvider` lives on the `testing` subpath, so the test double stays out of your app
+bundle. Import it from `@quonfig/react-native/testing`; hooks still come from the root entry:
+
+```tsx
+import { QuonfigTestProvider } from "@quonfig/react-native/testing";
+import { useQuonfig } from "@quonfig/react-native";
+```
+
+Your test runner must resolve package `exports` (Jest 28+, or TypeScript with `moduleResolution`
+`node16`, `nodenext` or `bundler`).
 
 Without polling, flags are fetched only when the provider mounts or its `contextAttributes` change.
 To pick up flag changes while the app stays open, pass a `pollInterval` (in milliseconds) to

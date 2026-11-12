@@ -1,6 +1,26 @@
 # Changelog
 
-## Unreleased
+## 2.0.0 - 2026-11-12
+
+Tracks `@quonfig/react` 2.x (qfg-kqf8i). Apps still on `@quonfig/react` 1.x should stay on
+`@quonfig/react-native` `^1`.
+
+### UPGRADE to 2.0
+
+1. **Upgrade `@quonfig/react` and `@quonfig/javascript` to 2.x** alongside this package
+   (`@quonfig/react` peer moves from `^1.6.0` to `^2.0.0`). Read the `@quonfig/react` 2.0 UPGRADE
+   section: `getDuration` takes a default and never throws, `isEnabled` is `true` only for a boolean
+   `true`, and switching `contextAttributes` no longer serves the previous user's values.
+2. **`QuonfigTestProvider` moved to `@quonfig/react-native/testing`**, matching
+   `@quonfig/react/testing`. The root entry no longer exports it. The new entry installs the same
+   polyfills before loading `@quonfig/react/testing`.
+
+   ```diff
+   - import { QuonfigTestProvider } from "@quonfig/react-native";
+   + import { QuonfigTestProvider } from "@quonfig/react-native/testing";
+   ```
+
+### Also in this release
 
 - Tests: real-stack provider tests over the actual `@quonfig/react` + `@quonfig/javascript` in an
   RN-shaped runtime (failed boot then recovery, context switch, telemetry flush, ESM build polyfill
