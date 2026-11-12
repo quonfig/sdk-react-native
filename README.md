@@ -11,13 +11,16 @@ that the React SDK does not yet expose to React Native, open an issue.
 ## Install
 
 ```bash
-npm install @quonfig/react-native @quonfig/react @quonfig/javascript base-64 react-native-get-random-values@^1.11.0
+npm install @quonfig/react-native @quonfig/react@^1 @quonfig/javascript@^1 base-64 react-native-get-random-values@^1.11.0
 # or
-yarn add @quonfig/react-native @quonfig/react @quonfig/javascript base-64 react-native-get-random-values@^1.11.0
+yarn add @quonfig/react-native @quonfig/react@^1 @quonfig/javascript@^1 base-64 react-native-get-random-values@^1.11.0
 ```
 
 `@quonfig/react` and `@quonfig/javascript` are peer dependencies. npm 7+ installs peers for you, but
 Yarn does not, so list them explicitly. TypeScript types are included.
+
+Pin both to `^1`. This package peers on `@quonfig/react` `^1.6.0`, so an unpinned install that
+resolves `@quonfig/react` 2.x falls outside the peer range.
 
 ## Import order
 
